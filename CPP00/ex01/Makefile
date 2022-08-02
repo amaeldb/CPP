@@ -1,13 +1,13 @@
 SRCS =	Contact.cpp PhoneBook.cpp
 
-OBJS =	${SRCS:.c=.o}
+OBJS =	${SRCS:.cpp=.o}
 
 FLAGS =	-Wall -Wextra -Werror -std=c++98
 
 NAME =	PhoneBook
 
-.c.o:
-	@ c++ ${FLAGS} -c $< -o ${<:.c=.o}
+.cpp.o:
+	@ c++ ${FLAGS} -c $< -o ${<:.cpp=.o}
 
 all:	${NAME}
 
