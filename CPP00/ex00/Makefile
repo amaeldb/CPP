@@ -1,3 +1,24 @@
-SRC =	megaphone.cpp
+SRCS =	megaphone.cpp
 
-OBJS =	
+OBJS =	${SRCS:.cpp=.o}
+
+FLAGS =	-Wall -Wextra -Werror -std=c++98
+
+NAME =	megaphone
+
+.cpp.o:
+	@ c++ ${FLAGS} -c $< -o ${<:.cpp=.o}
+
+all:	${NAME}
+
+${NAME}:	${OBJS}
+	@ c++ ${FLAGS} ${OBJS} -o ${NAME}
+
+clean:	${OBJS}
+	@ rm -rf ${OBJS}
+
+fclean: clean
+	@ rm -rf ${NAME}
+
+re:	fclean
+	@ make all
