@@ -1,3 +1,0 @@
-SRC =	megaphone.cpp
-
-OBJS =	
